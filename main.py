@@ -31,11 +31,6 @@ s24 = box(pos=vec(3.5,-19.5,0),size=vec(2,1,2))
 s25 =  box(pos=vec(6,-18,0),size=vec(2,1,2))
 s26 = box(pos=vec(8.5,-16.5,0),size=vec(2,1,2),color=color.red)
 
-b1 = sphere(pos = vec(7,7,0), color = vec(153/255,204/255,1), radius = 3, axis  = vec(0,1,0))
-b2= ring(pos = vec(7,7,0), color = vec(0,128/255,1), radius = 5, axis  = vec(0,1,0))
-b3 = cone(pos = vec(7,0,0), color = vec(1,1,0), size = vec(5,5,5), axis = vec(0,1,0), opacity=0.2)
-b = compound( [b1,b2,b3] )
-
 while True  :
     rate(100)
     k = keysdown()
@@ -48,3 +43,10 @@ while True  :
     if 'd' in k :
         c.pos.x += 0.1
 
+A = sphere(pos = vec(0,0,0), color = vec(153/255,204/255,1), radius = 3, axis  = vec(0,1,0))
+B = ring(pos = vec(0,0,0), color = vec(0,128/255,1), radius = 5, axis  = vec(0,1,0))
+C = cone(pos = vec(0,-7,0), color = vec(1,1,0), size = vec(5,5,5), axis = vec(0,1,0) , opacity = 0.2)
+ 
+UFO = compound ([A,B,C])
+for part in UFO :
+    part. =
