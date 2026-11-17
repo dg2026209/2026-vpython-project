@@ -1,11 +1,8 @@
 c = box(texture =     "https://i.postimg.cc/1X1wWLt6/geulim1.png",size=vec(1,2,1), pos=vec(0,-28,0))
-for i in range(50) : 
-    for j in range(50) : 
-        for k in range(50) :
-             box(color=vec(1,i,j), size=vec(30,60,0.5), pos=vec(0,0,0))
+ box(color=vec(1,i,j), size=vec(30,60,0.5), pos=vec(0,0,0))
       
-s1 = box(pos=vec(-4,0,0),size=vec(2,1,2))
-s2 = box(pos=vec(-9,-27,0),size=vec(2,1,2))
+s1 = box(pos=vec(-4,0,0),size=vec(2,1,2), color=vec(27/255,152/255,186/255))
+s2 = box(pos=vec(-9,-27,0),size=vec(2,1,2), color=vec(33/255,187/255,226/255))
 s3 = box(pos=vec(-6.5,-25.5,0),size=vec(2,1,2))
 s4 = box(pos=vec(-4,-24,0),size=vec(2,1,2))
 s5 = box(pos=vec(-1.5,-22.5,0),size=vec(2,1,2))
@@ -30,6 +27,12 @@ s23 = box(pos=vec(1,-21,0),size=vec(2,1,2))
 s24 = box(pos=vec(3.5,-19.5,0),size=vec(2,1,2))
 s25 =  box(pos=vec(6,-18,0),size=vec(2,1,2))
 s26 = box(pos=vec(8.5,-16.5,0),size=vec(2,1,2),color=color.red)
+s27 = box(pos=vec(2.5,11.5,0),size=vec(2,1,2),color=color.red)
+s28 = box(pos=vec(5,13,0),size=vec(2,1,2),color=color.red)
+s29 = box(pos=vec(7.5,5,14.5,0),size=vec(2,1,2),color=color.red)
+s30 = box(pos=vec(9,16,0),size=vec(2,1,2),color=color.red)
+s31 = box(pos=vec(11.5,17.5,0),size=vec(2,1,2),color=color.red)
+
 
 while True  :
     rate(100)
@@ -47,6 +50,16 @@ A = sphere(pos = vec(0,0,0), color = vec(153/255,204/255,1), radius = 3, axis  =
 B = ring(pos = vec(0,0,0), color = vec(0,128/255,1), radius = 5, axis  = vec(0,1,0))
 C = cone(pos = vec(0,-7,0), color = vec(1,1,0), size = vec(5,5,5), axis = vec(0,1,0) , opacity = 0.2)
  
-UFO = compound ([A,B,C])
-for part in UFO :
-    part. =
+UFO = compound([A,B,C])
+
+g= vec (0,-9.8,0)
+ 
+UFO.v = vec(0,0,0)
+dt = 0.01
+ 
+while UFO.pos.y >= -30:
+    rate(100)
+   
+    UFO.pos =  UFO.pos + UFO.v*dt
+   
+    UFO.v = UFO.v + g*dt
